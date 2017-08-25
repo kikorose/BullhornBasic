@@ -1,15 +1,36 @@
 <!DOCTYPE html>
 <html xmlns:th="www.thymeleaf.org">
 <head lang="en">
-    >
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous" />
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin=
     <meta charset="UTF-8"/>
     <title>Title</title>
 </head>
 <body>
+<div class="jumbotron">
+        <div th:each="message : ${messages}">
+        <div th:if="${message.content} !=null">
+            <img th:src="${https://s-media-cache-ak0.pinimg.com/originals/82/2f/c2/822fc271f3457af71e88d80b51346769.jpg}"/>
+            <hr/>
 <a href="/">Show All Messages</a><br/>
-Content:<span th:text="${message.content}"></span><br/>
+        <p>
+        <img src="smiley.gif" alt="Smiley face" style="float:left;width:42px;height:42px;">
+        A paragraph with a floating image. A paragraph with a floating image. A paragraph with a floating image.
+    </p>
+
+    Content:<span th:text="${message.content}"></span><br/>
 Posted Date:<span th:text="${message.posteddate}"></span><br/>
 Sent By:<p th:text="${message.sentby}"></p><br/>
 <a th:href="@{/sentby/{id}(id=${message.id})">Sent By</a>
+</div>
+        </div>
+</div>
+</div>
 </body>
 </html>
